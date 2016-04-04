@@ -1,0 +1,16 @@
+/* tables */
+table.tablesorter thead tr .header {
+	background-image: url(sort_both.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: center right !important;
+	cursor: pointer !important;
+}
+table.tablesorter tbody tr.odd td {
+	background-color:#F0F0F6 !important;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(sort_asc.png) !important;
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(sort_desc.png) !important;
+}

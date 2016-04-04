@@ -1,0 +1,136 @@
+/*
+* CSS3 Treeview. No JavaScript
+* @version 1.0
+* @author Martin Ivanov
+* @url developer's website: http://wemakesites.net/
+* @url developer's twitter: https://twitter.com/#!/wemakesitesnet
+* @url developer's blog http://acidmartin.wordpress.com/
+**/
+
+/*
+* This solution works with all modern browsers and Internet Explorer 9+. 
+* If you are interested in purchasing a JavaScript enabler for IE8 
+* for the CSS3 Treeview, please, check this link:
+* http://experiments.wemakesites.net/miscellaneous/acidjs-css3-treeview/
+**/
+ 
+.treeview ul,
+.treeview li
+{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.treeview li {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.treeview input
+{
+	position: absolute;
+	opacity: 0;
+}
+
+.treeview
+{
+	font:inherit;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.treeview a
+{
+	color: #00f;
+	text-decoration: none;
+}
+
+.treeview a:hover
+{
+	text-decoration: underline;
+}
+
+.treeview input + label + ul
+{
+	margin: 0 0 0 22px;
+}
+
+.treeview input ~ ul
+{
+	display: none;
+}
+
+.treeview label,
+.treeview label::before
+{
+	cursor: pointer;
+}
+
+.treeview input:disabled + label
+{
+	cursor: default;
+	opacity: .6;
+}
+
+.treeview input:checked:not(:disabled) ~ ul
+{
+	display: block;
+}
+
+.treeview label,
+.treeview label::before
+{
+	background: url("../images/icons/treeview.png") no-repeat;
+}
+
+.treeview label,
+.treeview a,
+.treeview label::before
+{
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;,
+	vertical-align: middle;
+}
+
+.treeview label
+{
+	background-position: 18px 0;
+}
+
+.treeview label::before
+{
+	content: "";
+	width: 16px;
+	margin: 0 22px 0 0;
+	vertical-align: middle;
+	background-position: 0 -32px;
+}
+
+.treeview input:checked + label::before
+{
+	background-position: 0 -16px;
+}
+
+/* webkit adjacent element selector bugfix */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+	.treeview 
+	{
+		-webkit-animation: webkit-adjacent-element-selector-bugfix infinite 1s;
+	}
+	
+	@-webkit-keyframes webkit-adjacent-element-selector-bugfix 
+	{
+		from 
+		{ 
+			padding: 0;
+		} 
+		to 
+		{ 
+			padding: 0;
+		}
+	}
+}

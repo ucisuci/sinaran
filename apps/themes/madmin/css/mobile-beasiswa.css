@@ -1,0 +1,190 @@
+/* adjust body when menu is open */
+body.slide-active {
+    overflow-x: hidden
+}
+/*first child of #page-content so it doesn't shift around*/
+.no-margin-top {
+    margin-top: 0px!important
+}
+/*wrap the entire page content but not nav inside this div if not a fixed top, don't add any top padding */
+#wrapper {
+    position: relative;
+    left: 0;
+}
+#wrapper.slide-active {
+    padding-top: 0
+}
+
+
+
+/* put toggle bars on the left :: not using button */
+#slide-nav { 
+	background: #2f4355 !important;
+	border:none;
+	margin:0;
+	z-index:2;
+	width:100%
+}
+#slide-nav .navbar-header {
+	width:100%;height:100%;
+}
+
+#slide-nav .navbar-brand {
+	color:#fff;
+	font-size:1.1em;
+}
+
+#slide-nav .navbar-toggle {
+    cursor: pointer;
+    position: relative;
+    line-height: 0;
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+	border-radius:0px;
+    background: transparent;
+	width:100%;
+	display:block;
+}
+#slide-nav .navbar-toggle i {
+	color:#FCD900;
+	line-height:50px;
+	font-size:24px;
+}
+
+/* icon bar prettyup - optional */
+#slide-nav .navbar-toggle > .icon-bar {
+    width: 100%;
+    display: block;
+    height: 3px;
+    margin: 5px 0 0 0;
+}
+#slide-nav .navbar-toggle.slide-active .icon-bar {
+    background: orange
+}
+.navbar-header {
+    position: relative
+}
+/* un fix the navbar when active so that all the menu items are accessible */
+.navbar.navbar-fixed-top.slide-active {
+    position: relative
+}
+#slide-nav { display:none }
+/* screw writing importants and shit, just stick it in max width since these classes are not shared between sizes */
+
+@media (max-width:1000px) {
+	#page-wrapper { margin:0;}
+	#sidebar, #topbar { display:none; }
+	#slide-nav { display:block }
+	#slide-nav .navbar-toggle {
+		display:block;
+	}
+	#slide-nav .container {
+	    margin: 0!important;
+	    padding: 0!important;
+		height:100%;
+	}
+	#slide-nav .navbar-header {
+	    margin: 0 auto;
+	    padding: 0 15px;
+	}
+	#slide-nav .navbar.slide-active {
+	    position: absolute;
+	    width: 100%;
+	    top: 0px;
+	    z-index: 1000;
+	}
+	#slide-nav #slidemenu {
+	    background: #45627d;
+	    display:none;
+	    left:0;
+		width: 100%;
+	    min-width: 0;
+	    position: absolute;
+	    padding-left: 0;
+	    z-index: 2;
+	    top: 50px;
+	    margin: 0;
+	}
+	#slide-nav #slidemenu .navbar-nav {
+	    min-width: 0;
+	    width: 100%;
+	    margin: 0;
+	}
+	#slide-nav #slidemenu .navbar-nav .dropdown-menu li a {
+	    min-width: 0;
+	    width: 100%;
+	    white-space: normal;
+	}
+	#slide-nav {
+	    border-top: 0
+	}
+	#slide-nav.navbar-inverse #slidemenu {
+	    background: #333
+	}
+	/* this is behind the navigation but the navigation is not inside it so that the navigation is accessible and scrolls*/
+	#navbar-height-col {
+	    position: fixed;
+	    top: 0;
+	    height: 100%;
+		bottom:0;
+	    width: 100%;
+	    left: 0;
+	    background: #45627d;
+	}
+	#navbar-height-col.inverse {
+	    background: #333;
+	    z-index: 1;
+	    border: 0;
+	}
+	#slide-nav .navbar-form {
+	    width: 100%;
+	    margin: 8px 0;
+	    text-align: center;
+	    overflow: hidden;
+	    /*fast clearfixer*/
+	}
+	#slide-nav .navbar-form .form-control {
+	    text-align: center
+	}
+	#slide-nav .navbar-form .btn {
+	    width: 100%
+	}
+}
+
+.mobile-side-menu li {
+	border-bottom:1px solid #33485C;
+}
+.mobile-side-menu li a {
+	color:#fff;
+	padding:15px;
+}
+.mobile-side-menu li a:hover,
+.mobile-side-menu li a:focus {
+	color:#fff;
+	background:#E74C3C;
+}
+.mobile-side-menu li a span.menu-title {
+  margin-left: 10px;
+  color: #ffffff;
+}
+#slidemenu h4 a {
+	color:#fff;
+}
+#slidemenu h4 a:hover, 
+#slidemenu h4 a:focus {
+	color:#E74C3C;
+}
+
+#slidemenu h4 {
+	font-size:1em;padding:0;
+	margin:0;
+	padding:15px;
+	color:#fff;
+	font-weight:bold;
+	background:#33485c;
+	border-bottom:1px solid #45627D;
+}
+
+
